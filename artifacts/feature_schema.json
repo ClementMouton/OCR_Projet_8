@@ -1,0 +1,12 @@
+{
+  "features": [
+    {
+      "name": "AMT_INCOME_TOTAL",
+      "dtype": "float64"
+    },
+    {
+      "name": "CODE_GENDER",
+      "dtype": "object"
+    }
+  ]
+}
