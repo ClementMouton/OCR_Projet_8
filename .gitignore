@@ -9,3 +9,7 @@ data/production/
 notebooks/src/*.csv
 data/
 00_training_pipeline_api_ready.ipynb
+.venv/
+.venv-monitoring/
+venv/
+env/
