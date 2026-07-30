@@ -132,3 +132,53 @@ def test_predict_missing_features(client):
     data = response.json()
 
     assert "Variables manquantes" in data["detail"]
+
+def test_predict_creates_log(
+    client,
+    valid_client,
+    tmp_path,
+    monkeypatch,
+):
+    from src.monitoring import prediction_logger
+
+    log_file = tmp_path / "predictions.jsonl"
+
+    monkeypatch.setattr(
+        prediction_logger,
+        "LOG_DIR",
+        tmp_path,
+    )
+
+    monkeypatch.setattr(
+        prediction_logger,
+        "LOG_FILE",
+        log_file,
+    )
+
+    response = client.post(
+        "/predict",
+        json={
+            "features": valid_client
+        },
+    )
+
+    assert response.status_code == 200
+    assert log_file.exists()
+
+    lines = log_file.read_text(
+        encoding="utf-8"
+    ).strip().splitlines()
+
+    assert len(lines) == 1
+
+    log_data = json.loads(lines[0])
+
+    assert "timestamp" in log_data
+    assert "features" in log_data
+    assert "default_probability" in log_data
+    assert "prediction" in log_data
+    assert "decision_threshold" in log_data
+    assert "decision_label" in log_data
+    assert "latency_ms" in log_data
+
+    assert log_data["latency_ms"] >= 0

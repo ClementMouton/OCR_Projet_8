@@ -109,3 +109,4 @@ def predict(request: PredictionRequest) -> PredictionResponse:
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Erreur interne pendant la prédiction.",
         ) from error
+
