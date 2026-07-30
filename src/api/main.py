@@ -9,7 +9,9 @@ from src.api.schemas import (
     PredictionResponse,
 )
 from src.inference.model_loader import ModelService
+from time import perf_counter
 
+from src.monitoring.prediction_logger import log_prediction
 
 model_service = ModelService()
 
@@ -75,12 +77,33 @@ def predict(request: PredictionRequest) -> PredictionResponse:
         )
 
     try:
-        return model_service.predict(request.features)
+        start_time = perf_counter()
+
+        result = model_service.predict(
+            request.features
+        )
+
+        latency_ms = (
+            perf_counter() - start_time
+        ) * 1000
+
+        log_prediction(
+            features=request.features,
+            default_probability=result.default_probability,
+            prediction=result.prediction,
+            decision_threshold=result.decision_threshold,
+            decision_label=result.decision_label,
+            latency_ms=latency_ms,
+        )
+
+        return result
+
     except ValueError as error:
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             detail=str(error),
         ) from error
+
     except Exception as error:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
