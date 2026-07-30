@@ -1,4 +1,5 @@
 {
-  "default_probability": 0.3742,
-  "prediction": 0
+  "default_probability": 0.2744591048563499,
+  "prediction": 0,
+  "decision_threshold": 0.53
 }

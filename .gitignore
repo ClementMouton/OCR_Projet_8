@@ -6,5 +6,6 @@ __pycache__/
 .env
 logs/
 data/production/
-src/*.csv
+notebooks/src/*.csv
 data/
+00_training_pipeline_api_ready.ipynb

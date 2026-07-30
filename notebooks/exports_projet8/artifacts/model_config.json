@@ -1,0 +1,7 @@
+{
+    "model_name": "home_credit_scoring_model",
+    "model_version": "1.0.0",
+    "decision_threshold": 0.53,
+    "fn_cost": 10,
+    "fp_cost": 1
+}

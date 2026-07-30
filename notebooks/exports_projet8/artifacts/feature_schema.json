@@ -1,0 +1,1776 @@
+{
+    "features": [
+        {
+            "name": "NAME_CONTRACT_TYPE",
+            "dtype": "object"
+        },
+        {
+            "name": "CODE_GENDER",
+            "dtype": "object"
+        },
+        {
+            "name": "FLAG_OWN_CAR",
+            "dtype": "object"
+        },
+        {
+            "name": "FLAG_OWN_REALTY",
+            "dtype": "object"
+        },
+        {
+            "name": "CNT_CHILDREN",
+            "dtype": "int64"
+        },
+        {
+            "name": "AMT_INCOME_TOTAL",
+            "dtype": "float64"
+        },
+        {
+            "name": "AMT_CREDIT",
+            "dtype": "float64"
+        },
+        {
+            "name": "AMT_ANNUITY",
+            "dtype": "float64"
+        },
+        {
+            "name": "AMT_GOODS_PRICE",
+            "dtype": "float64"
+        },
+        {
+            "name": "NAME_TYPE_SUITE",
+            "dtype": "object"
+        },
+        {
+            "name": "NAME_INCOME_TYPE",
+            "dtype": "object"
+        },
+        {
+            "name": "NAME_EDUCATION_TYPE",
+            "dtype": "object"
+        },
+        {
+            "name": "NAME_FAMILY_STATUS",
+            "dtype": "object"
+        },
+        {
+            "name": "NAME_HOUSING_TYPE",
+            "dtype": "object"
+        },
+        {
+            "name": "REGION_POPULATION_RELATIVE",
+            "dtype": "float64"
+        },
+        {
+            "name": "DAYS_BIRTH",
+            "dtype": "int64"
+        },
+        {
+            "name": "DAYS_EMPLOYED",
+            "dtype": "int64"
+        },
+        {
+            "name": "DAYS_REGISTRATION",
+            "dtype": "float64"
+        },
+        {
+            "name": "DAYS_ID_PUBLISH",
+            "dtype": "int64"
+        },
+        {
+            "name": "OWN_CAR_AGE",
+            "dtype": "float64"
+        },
+        {
+            "name": "FLAG_MOBIL",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_EMP_PHONE",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_WORK_PHONE",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_CONT_MOBILE",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_PHONE",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_EMAIL",
+            "dtype": "int64"
+        },
+        {
+            "name": "OCCUPATION_TYPE",
+            "dtype": "object"
+        },
+        {
+            "name": "CNT_FAM_MEMBERS",
+            "dtype": "float64"
+        },
+        {
+            "name": "REGION_RATING_CLIENT",
+            "dtype": "int64"
+        },
+        {
+            "name": "REGION_RATING_CLIENT_W_CITY",
+            "dtype": "int64"
+        },
+        {
+            "name": "WEEKDAY_APPR_PROCESS_START",
+            "dtype": "object"
+        },
+        {
+            "name": "HOUR_APPR_PROCESS_START",
+            "dtype": "int64"
+        },
+        {
+            "name": "REG_REGION_NOT_LIVE_REGION",
+            "dtype": "int64"
+        },
+        {
+            "name": "REG_REGION_NOT_WORK_REGION",
+            "dtype": "int64"
+        },
+        {
+            "name": "LIVE_REGION_NOT_WORK_REGION",
+            "dtype": "int64"
+        },
+        {
+            "name": "REG_CITY_NOT_LIVE_CITY",
+            "dtype": "int64"
+        },
+        {
+            "name": "REG_CITY_NOT_WORK_CITY",
+            "dtype": "int64"
+        },
+        {
+            "name": "LIVE_CITY_NOT_WORK_CITY",
+            "dtype": "int64"
+        },
+        {
+            "name": "ORGANIZATION_TYPE",
+            "dtype": "object"
+        },
+        {
+            "name": "EXT_SOURCE_1",
+            "dtype": "float64"
+        },
+        {
+            "name": "EXT_SOURCE_2",
+            "dtype": "float64"
+        },
+        {
+            "name": "EXT_SOURCE_3",
+            "dtype": "float64"
+        },
+        {
+            "name": "APARTMENTS_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "BASEMENTAREA_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "YEARS_BEGINEXPLUATATION_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "YEARS_BUILD_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "COMMONAREA_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "ELEVATORS_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "ENTRANCES_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "FLOORSMAX_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "FLOORSMIN_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "LANDAREA_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "LIVINGAPARTMENTS_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "LIVINGAREA_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "NONLIVINGAPARTMENTS_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "NONLIVINGAREA_AVG",
+            "dtype": "float64"
+        },
+        {
+            "name": "APARTMENTS_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "BASEMENTAREA_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "YEARS_BEGINEXPLUATATION_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "YEARS_BUILD_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "COMMONAREA_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "ELEVATORS_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "ENTRANCES_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "FLOORSMAX_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "FLOORSMIN_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "LANDAREA_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "LIVINGAPARTMENTS_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "LIVINGAREA_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "NONLIVINGAPARTMENTS_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "NONLIVINGAREA_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "APARTMENTS_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "BASEMENTAREA_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "YEARS_BEGINEXPLUATATION_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "YEARS_BUILD_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "COMMONAREA_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "ELEVATORS_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "ENTRANCES_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "FLOORSMAX_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "FLOORSMIN_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "LANDAREA_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "LIVINGAPARTMENTS_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "LIVINGAREA_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "NONLIVINGAPARTMENTS_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "NONLIVINGAREA_MEDI",
+            "dtype": "float64"
+        },
+        {
+            "name": "FONDKAPREMONT_MODE",
+            "dtype": "object"
+        },
+        {
+            "name": "HOUSETYPE_MODE",
+            "dtype": "object"
+        },
+        {
+            "name": "TOTALAREA_MODE",
+            "dtype": "float64"
+        },
+        {
+            "name": "WALLSMATERIAL_MODE",
+            "dtype": "object"
+        },
+        {
+            "name": "EMERGENCYSTATE_MODE",
+            "dtype": "object"
+        },
+        {
+            "name": "OBS_30_CNT_SOCIAL_CIRCLE",
+            "dtype": "float64"
+        },
+        {
+            "name": "DEF_30_CNT_SOCIAL_CIRCLE",
+            "dtype": "float64"
+        },
+        {
+            "name": "OBS_60_CNT_SOCIAL_CIRCLE",
+            "dtype": "float64"
+        },
+        {
+            "name": "DEF_60_CNT_SOCIAL_CIRCLE",
+            "dtype": "float64"
+        },
+        {
+            "name": "DAYS_LAST_PHONE_CHANGE",
+            "dtype": "float64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_2",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_3",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_4",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_5",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_6",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_7",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_8",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_9",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_10",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_11",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_12",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_13",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_14",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_15",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_16",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_17",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_18",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_19",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_20",
+            "dtype": "int64"
+        },
+        {
+            "name": "FLAG_DOCUMENT_21",
+            "dtype": "int64"
+        },
+        {
+            "name": "AMT_REQ_CREDIT_BUREAU_HOUR",
+            "dtype": "float64"
+        },
+        {
+            "name": "AMT_REQ_CREDIT_BUREAU_DAY",
+            "dtype": "float64"
+        },
+        {
+            "name": "AMT_REQ_CREDIT_BUREAU_WEEK",
+            "dtype": "float64"
+        },
+        {
+            "name": "AMT_REQ_CREDIT_BUREAU_MON",
+            "dtype": "float64"
+        },
+        {
+            "name": "AMT_REQ_CREDIT_BUREAU_QRT",
+            "dtype": "float64"
+        },
+        {
+            "name": "AMT_REQ_CREDIT_BUREAU_YEAR",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_SK_ID_BUREAU_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_SK_ID_BUREAU_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_SK_ID_BUREAU_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_SK_ID_BUREAU_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_SK_ID_BUREAU_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CREDIT_DAY_OVERDUE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CREDIT_DAY_OVERDUE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CREDIT_DAY_OVERDUE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CREDIT_DAY_OVERDUE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CREDIT_DAY_OVERDUE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_ENDDATE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_ENDDATE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_ENDDATE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_ENDDATE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_ENDDATE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_ENDDATE_FACT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_ENDDATE_FACT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_ENDDATE_FACT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_ENDDATE_FACT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_ENDDATE_FACT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_MAX_OVERDUE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_MAX_OVERDUE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_MAX_OVERDUE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_MAX_OVERDUE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_MAX_OVERDUE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CNT_CREDIT_PROLONG_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CNT_CREDIT_PROLONG_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CNT_CREDIT_PROLONG_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CNT_CREDIT_PROLONG_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_CNT_CREDIT_PROLONG_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_DEBT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_DEBT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_DEBT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_DEBT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_DEBT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_LIMIT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_LIMIT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_LIMIT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_LIMIT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_LIMIT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_OVERDUE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_OVERDUE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_OVERDUE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_OVERDUE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_CREDIT_SUM_OVERDUE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_UPDATE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_UPDATE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_UPDATE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_UPDATE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_DAYS_CREDIT_UPDATE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_ANNUITY_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_ANNUITY_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_ANNUITY_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_ANNUITY_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "bureau_AMT_ANNUITY_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SK_ID_PREV_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SK_ID_PREV_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SK_ID_PREV_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SK_ID_PREV_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SK_ID_PREV_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_ANNUITY_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_ANNUITY_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_ANNUITY_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_ANNUITY_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_ANNUITY_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_APPLICATION_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_APPLICATION_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_APPLICATION_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_APPLICATION_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_APPLICATION_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_CREDIT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_CREDIT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_CREDIT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_CREDIT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_CREDIT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_DOWN_PAYMENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_DOWN_PAYMENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_DOWN_PAYMENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_DOWN_PAYMENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_DOWN_PAYMENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_GOODS_PRICE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_GOODS_PRICE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_GOODS_PRICE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_GOODS_PRICE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_AMT_GOODS_PRICE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_HOUR_APPR_PROCESS_START_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_HOUR_APPR_PROCESS_START_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_HOUR_APPR_PROCESS_START_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_HOUR_APPR_PROCESS_START_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_HOUR_APPR_PROCESS_START_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_LAST_APPL_IN_DAY_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_LAST_APPL_IN_DAY_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_LAST_APPL_IN_DAY_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_LAST_APPL_IN_DAY_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_LAST_APPL_IN_DAY_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_RATE_DOWN_PAYMENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_RATE_DOWN_PAYMENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_RATE_DOWN_PAYMENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_RATE_DOWN_PAYMENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_RATE_DOWN_PAYMENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_RATE_INTEREST_PRIMARY_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_RATE_INTEREST_PRIMARY_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_RATE_INTEREST_PRIVILEGED_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_RATE_INTEREST_PRIVILEGED_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_DECISION_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_DECISION_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_DECISION_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_DECISION_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_DECISION_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SELLERPLACE_AREA_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SELLERPLACE_AREA_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SELLERPLACE_AREA_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SELLERPLACE_AREA_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_SELLERPLACE_AREA_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_CNT_PAYMENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_CNT_PAYMENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_CNT_PAYMENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_CNT_PAYMENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_CNT_PAYMENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DRAWING_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DRAWING_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DRAWING_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DRAWING_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DRAWING_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DUE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DUE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DUE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DUE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_FIRST_DUE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_1ST_VERSION_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_1ST_VERSION_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_1ST_VERSION_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_1ST_VERSION_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_1ST_VERSION_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_LAST_DUE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_TERMINATION_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_TERMINATION_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_TERMINATION_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_TERMINATION_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_DAYS_TERMINATION_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_INSURED_ON_APPROVAL_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_INSURED_ON_APPROVAL_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_INSURED_ON_APPROVAL_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_INSURED_ON_APPROVAL_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "previous_NFLAG_INSURED_ON_APPROVAL_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_SK_ID_PREV_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_SK_ID_PREV_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_SK_ID_PREV_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_SK_ID_PREV_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_SK_ID_PREV_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_VERSION_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_VERSION_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_VERSION_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_VERSION_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_VERSION_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_NUMBER_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_NUMBER_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_NUMBER_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_NUMBER_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_NUM_INSTALMENT_NUMBER_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_INSTALMENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_INSTALMENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_INSTALMENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_INSTALMENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_INSTALMENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_ENTRY_PAYMENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_ENTRY_PAYMENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_ENTRY_PAYMENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_ENTRY_PAYMENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_ENTRY_PAYMENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_INSTALMENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_INSTALMENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_INSTALMENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_INSTALMENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_INSTALMENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_PAYMENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_PAYMENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_PAYMENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_PAYMENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_AMT_PAYMENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_DIFF_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_DIFF_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_DIFF_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_DIFF_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_DIFF_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_RATIO_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_RATIO_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_RATIO_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_RATIO_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_PAYMENT_RATIO_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_PAYMENT_DIFF_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_PAYMENT_DIFF_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_PAYMENT_DIFF_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_PAYMENT_DIFF_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "installments_DAYS_PAYMENT_DIFF_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_ID_PREV_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_ID_PREV_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_ID_PREV_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_ID_PREV_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_ID_PREV_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_MONTHS_BALANCE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_MONTHS_BALANCE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_MONTHS_BALANCE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_MONTHS_BALANCE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_MONTHS_BALANCE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_FUTURE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_FUTURE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_FUTURE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_FUTURE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_CNT_INSTALMENT_FUTURE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_DEF_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_DEF_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_DEF_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_DEF_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "pos_SK_DPD_DEF_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_ID_PREV_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_ID_PREV_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_ID_PREV_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_ID_PREV_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_ID_PREV_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_MONTHS_BALANCE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_MONTHS_BALANCE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_MONTHS_BALANCE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_MONTHS_BALANCE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_MONTHS_BALANCE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_BALANCE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_BALANCE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_BALANCE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_BALANCE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_BALANCE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_CREDIT_LIMIT_ACTUAL_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_CREDIT_LIMIT_ACTUAL_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_CREDIT_LIMIT_ACTUAL_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_CREDIT_LIMIT_ACTUAL_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_CREDIT_LIMIT_ACTUAL_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_ATM_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_ATM_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_CURRENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_CURRENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_CURRENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_OTHER_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_OTHER_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_POS_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_DRAWINGS_POS_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_INST_MIN_REGULARITY_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_INST_MIN_REGULARITY_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_INST_MIN_REGULARITY_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_INST_MIN_REGULARITY_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_INST_MIN_REGULARITY_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_PAYMENT_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_PAYMENT_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_PAYMENT_TOTAL_CURRENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_PAYMENT_TOTAL_CURRENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_PAYMENT_TOTAL_CURRENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_PAYMENT_TOTAL_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_PAYMENT_TOTAL_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECEIVABLE_PRINCIPAL_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECEIVABLE_PRINCIPAL_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECEIVABLE_PRINCIPAL_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECEIVABLE_PRINCIPAL_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECEIVABLE_PRINCIPAL_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECIVABLE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECIVABLE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECIVABLE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECIVABLE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_RECIVABLE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_TOTAL_RECEIVABLE_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_TOTAL_RECEIVABLE_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_TOTAL_RECEIVABLE_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_TOTAL_RECEIVABLE_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_AMT_TOTAL_RECEIVABLE_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_ATM_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_ATM_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_CURRENT_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_CURRENT_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_CURRENT_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_OTHER_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_OTHER_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_POS_CURRENT_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_DRAWINGS_POS_CURRENT_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_INSTALMENT_MATURE_CUM_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_INSTALMENT_MATURE_CUM_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_INSTALMENT_MATURE_CUM_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_INSTALMENT_MATURE_CUM_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_CNT_INSTALMENT_MATURE_CUM_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_count",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_DEF_mean",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_DEF_min",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_DEF_max",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_DEF_sum",
+            "dtype": "float64"
+        },
+        {
+            "name": "credit_SK_DPD_DEF_count",
+            "dtype": "float64"
+        }
+    ]
+}
