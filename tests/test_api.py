@@ -34,4 +34,15 @@ def test_predict_without_model_returns_503() -> None:
         json={"features": {"AMT_INCOME_TOTAL": 200000}},
     )
 
-    assert response.status_code in {200, 422, 503}
+def test_predict_without_model_returns_503() -> None:
+    response = client.post(
+        "/predict",
+        json={
+            "features": {
+                "AMT_INCOME_TOTAL": 200000
+            }
+        },
+    )
+
+    assert response.status_code == 503
+    assert "modèle n'est pas disponible" in response.json()["detail"]

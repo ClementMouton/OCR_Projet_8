@@ -6,3 +6,5 @@ __pycache__/
 .env
 logs/
 data/production/
+src/*.csv
+data/
