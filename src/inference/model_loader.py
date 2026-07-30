@@ -126,7 +126,9 @@ class ModelService:
             row = features
 
         dataframe = pd.DataFrame([row])
-
+        import numpy as np
+        dataframe = dataframe.replace({None: np.nan})
+        
         if not hasattr(self.model, "predict_proba"):
             raise ValueError(
                 "Le modèle chargé ne possède pas predict_proba()."

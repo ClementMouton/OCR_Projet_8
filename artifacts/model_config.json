@@ -2,7 +2,7 @@
   "model_name": "home_credit_scoring_model",
   "model_version": "1.0.0",
   "model_type": "LogisticRegression",
-  "decision_threshold": 0.53,
+  "decision_threshold": 0.51,
   "fn_cost": 10,
   "fp_cost": 1,
   "positive_class": 1,

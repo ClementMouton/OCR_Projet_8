@@ -1,8 +1,8 @@
 {
-    "roc_auc": 0.7731818580642873,
-    "precision": 0.18484917214787933,
-    "recall": 0.6565961732124874,
-    "f1_score": 0.2884828104951108,
-    "business_cost": 31426,
-    "decision_threshold": 0.53
+    "roc_auc": 0.7729928595288887,
+    "precision": 0.17757496740547588,
+    "recall": 0.6858006042296072,
+    "f1_score": 0.28210439105219554,
+    "business_cost": 31370,
+    "decision_threshold": 0.51
 }
