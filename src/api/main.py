@@ -12,14 +12,21 @@ from src.inference.model_loader import ModelService
 from time import perf_counter
 
 from src.monitoring.prediction_logger import log_prediction
-
+from src.monitoring.database import init_database
 model_service = ModelService()
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Charge le modèle au démarrage sans empêcher l'API de fonctionner."""
     model_service.load()
+
+    try:
+        init_database()
+    except Exception as error:
+        print(
+            f"Base PostgreSQL non disponible : {error}"
+        )
+
     yield
 
 
