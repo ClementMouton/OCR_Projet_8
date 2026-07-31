@@ -1,3 +1,4 @@
+import argparse
 import os
 from pathlib import Path
 
@@ -10,29 +11,60 @@ from evidently.presets import DataDriftPreset
 
 REFERENCE_DATA_PATH = "data/reference/reference_data.parquet"
 REPORT_DIR = Path("reports")
-DRIFT_REPORT_PATH = REPORT_DIR / "drift_report.html"
 
 
-def load_production_data() -> pd.DataFrame:
+def parse_arguments():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Génération d'un rapport de data drift "
+            "à partir des prédictions PostgreSQL."
+        )
+    )
+
+    parser.add_argument(
+        "--min-id",
+        type=int,
+        default=0,
+        help=(
+            "ID minimum exclu. "
+            "Exemple : --min-id 1000 sélectionne id > 1000."
+        ),
+    )
+
+    parser.add_argument(
+        "--max-id",
+        type=int,
+        default=None,
+        help=(
+            "ID maximum inclus. "
+            "Exemple : --max-id 1501 sélectionne id <= 1501."
+        ),
+    )
+
+    parser.add_argument(
+        "--output",
+        type=str,
+        default="drift_report.html",
+        help="Nom du rapport HTML généré.",
+    )
+
+    return parser.parse_args()
+
+
+def load_production_data(
+    min_id: int = 0,
+    max_id: int | None = None,
+) -> pd.DataFrame:
+
     database_url = os.getenv("DATABASE_URL")
 
     if not database_url:
         raise RuntimeError(
-            "La variable d'environnement DATABASE_URL n'est pas définie."
+            "La variable d'environnement DATABASE_URL "
+            "n'est pas définie."
         )
 
-    min_id_raw = os.getenv("PRODUCTION_MIN_ID", "0")
-
-    try:
-        min_id = int(min_id_raw)
-    except ValueError as error:
-        raise ValueError(
-            "PRODUCTION_MIN_ID doit être un entier."
-        ) from error
-
-    print(
-        f"PRODUCTION_MIN_ID utilisé : {min_id}"
-    )
+    params = [min_id]
 
     query = """
         SELECT
@@ -46,26 +78,43 @@ def load_production_data() -> pd.DataFrame:
             latency_ms
         FROM prediction_logs
         WHERE id > %s
-        ORDER BY id ASC;
     """
 
-    with psycopg.connect(database_url) as connection:
+    if max_id is not None:
+        query += " AND id <= %s"
+        params.append(max_id)
+
+    query += " ORDER BY id ASC;"
+
+    print("\n=== Sélection production ===")
+    print(f"ID minimum exclu : {min_id}")
+
+    if max_id is not None:
+        print(f"ID maximum inclus : {max_id}")
+    else:
+        print("ID maximum : aucun")
+
+    with psycopg.connect(
+        database_url
+    ) as connection:
+
         dataframe = pd.read_sql(
             query,
             connection,
-            params=(min_id,),
+            params=tuple(params),
         )
 
-    if not dataframe.empty:
+    if dataframe.empty:
+        print(
+            "Aucune prédiction trouvée "
+            "pour cette plage d'IDs."
+        )
+
+    else:
         print(
             f"IDs récupérés : "
             f"{dataframe['id'].min()} "
             f"→ {dataframe['id'].max()}"
-        )
-    else:
-        print(
-            "Aucune prédiction trouvée "
-            f"avec id > {min_id}"
         )
 
     return dataframe
@@ -88,6 +137,7 @@ def extract_features(
 
 
 def load_reference_data() -> pd.DataFrame:
+
     return pd.read_parquet(
         REFERENCE_DATA_PATH
     )
@@ -131,6 +181,7 @@ def validate_feature_schema(
     )
 
     if missing_in_production:
+
         print(
             f"Features manquantes en production : "
             f"{len(missing_in_production)}"
@@ -143,6 +194,7 @@ def validate_feature_schema(
         )
 
     if unexpected_in_production:
+
         print(
             f"Features supplémentaires en production : "
             f"{len(unexpected_in_production)}"
@@ -166,6 +218,7 @@ def validate_feature_schema(
 def generate_drift_report(
     reference_data: pd.DataFrame,
     production_data: pd.DataFrame,
+    output_path: Path,
 ) -> None:
 
     if production_data.empty:
@@ -201,10 +254,8 @@ def generate_drift_report(
 
     categorical_columns = [
         column
-        for column
-        in reference_data.columns
-        if column
-        not in numerical_columns
+        for column in reference_data.columns
+        if column not in numerical_columns
     ]
 
     print(
@@ -265,20 +316,28 @@ def generate_drift_report(
     )
 
     result.save_html(
-        str(
-            DRIFT_REPORT_PATH
-        )
+        str(output_path)
     )
 
     print(
         f"\n✓ Rapport de drift généré : "
-        f"{DRIFT_REPORT_PATH}"
+        f"{output_path}"
     )
 
 
-def main() -> None:
+def main():
 
-    logs = load_production_data()
+    args = parse_arguments()
+
+    output_path = (
+        REPORT_DIR
+        / args.output
+    )
+
+    logs = load_production_data(
+        min_id=args.min_id,
+        max_id=args.max_id,
+    )
 
     production_features = (
         extract_features(
@@ -308,6 +367,7 @@ def main() -> None:
     generate_drift_report(
         reference_data,
         production_features,
+        output_path,
     )
 
 
