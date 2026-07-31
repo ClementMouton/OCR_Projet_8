@@ -1,0 +1,11 @@
+{
+    "total_predictions": 501,
+    "credit_accordable_count": 423,
+    "default_risk_count": 78,
+    "default_risk_rate": 0.15568862275449102,
+    "mean_default_probability": 0.2640987313983639,
+    "median_default_probability": 0.19811773945497876,
+    "mean_latency_ms": 39.97783728330554,
+    "p95_latency_ms": 92.27528609335423,
+    "max_latency_ms": 669.4363933056593
+}
