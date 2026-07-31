@@ -2,10 +2,14 @@ import os
 
 import pandas as pd
 import psycopg
+from pathlib import Path
 
+from evidently import Report
+from evidently.presets import DataDriftPreset
 
 REFERENCE_DATA_PATH = "data/reference/reference_data.parquet"
-
+REPORT_DIR = Path("reports")
+DRIFT_REPORT_PATH = REPORT_DIR / "drift_report.html"
 
 def load_production_data() -> pd.DataFrame:
     database_url = os.getenv("DATABASE_URL")
@@ -109,6 +113,95 @@ def validate_feature_schema(
         print("✓ Schémas compatibles")
 
 
+def generate_drift_report(
+    reference_data: pd.DataFrame,
+    production_data: pd.DataFrame,
+) -> None:
+
+    if production_data.empty:
+        raise ValueError(
+            "Impossible de calculer le drift : "
+            "aucune donnée de production disponible."
+        )
+
+    REPORT_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    # On aligne l'ordre des colonnes
+    production_data = production_data[
+        reference_data.columns
+    ].copy()
+
+    # Identification explicite des types
+    numerical_columns = (
+        reference_data
+        .select_dtypes(include="number")
+        .columns
+        .tolist()
+    )
+
+    categorical_columns = [
+        column
+        for column in reference_data.columns
+        if column not in numerical_columns
+    ]
+
+    print("\n=== Types pour Evidently ===")
+    print(
+        f"Variables numériques : "
+        f"{len(numerical_columns)}"
+    )
+    print(
+        f"Variables catégorielles : "
+        f"{len(categorical_columns)}"
+    )
+
+    # Harmonisation des types
+    for column in numerical_columns:
+        reference_data[column] = pd.to_numeric(
+            reference_data[column],
+            errors="coerce",
+        )
+
+        production_data[column] = pd.to_numeric(
+            production_data[column],
+            errors="coerce",
+        )
+
+    for column in categorical_columns:
+        reference_data[column] = (
+            reference_data[column]
+            .astype("string")
+        )
+
+        production_data[column] = (
+            production_data[column]
+            .astype("string")
+        )
+
+    report = Report([
+        DataDriftPreset(
+            columns=reference_data.columns.tolist(),
+        )
+    ])
+
+    result = report.run(
+        current_data=production_data,
+        reference_data=reference_data,
+    )
+
+    result.save_html(
+        str(DRIFT_REPORT_PATH)
+    )
+
+    print(
+        f"\n✓ Rapport de drift généré : "
+        f"{DRIFT_REPORT_PATH}"
+    )
+
+
 if __name__ == "__main__":
 
     logs = load_production_data()
@@ -127,6 +220,11 @@ if __name__ == "__main__":
     )
 
     validate_feature_schema(
+        reference_data,
+        production_features,
+    )
+
+    generate_drift_report(
         reference_data,
         production_features,
     )
