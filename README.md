@@ -1,6 +1,7 @@
 <div align="center">
 
-# 🏦 Home Credit Default Risk – MLOps & Monitoring
+# Home Credit Default Risk
+# Production API, Monitoring & MLOps
 
 **Déployez et monitorez un modèle de scoring crédit**
 
@@ -14,10 +15,25 @@ Projet réalisé dans le cadre de la formation **Data Scientist – OpenClassroo
 ![CI](https://img.shields.io/badge/CI-GitHub%20Actions-success)
 
 </div>
+---
+
+## Quick Start
+
+```bash
+git clone ...
+
+cd OCR_Projet_8
+
+python -m venv .venv
+
+pip install -r requirements.txt
+
+uvicorn src.api.app:app --reload
+```
 
 ---
 
-# 📖 Sommaire
+# Sommaire
 
 - [Présentation](#-présentation)
 - [Architecture du projet](#-architecture-du-projet)
@@ -33,7 +49,7 @@ Projet réalisé dans le cadre de la formation **Data Scientist – OpenClassroo
 
 ---
 
-# 🎯 Présentation
+# Présentation
 
 ## Contexte
 
@@ -49,6 +65,21 @@ Contrairement à un projet de Machine Learning classique, ce projet couvre égal
 - stockage des prédictions ;
 - monitoring des données ;
 - monitoring des performances du modèle.
+
+---
+
+## Fonctionnalités
+
+- API REST FastAPI
+- Pipeline Scikit-Learn
+- Déploiement Docker
+- Déploiement Render
+- Journalisation PostgreSQL
+- Monitoring Evidently
+- Calcul automatique des métriques
+- Génération de rapports HTML
+- Exports JSON
+- Intégration Continue GitHub Actions
 
 ---
 
@@ -80,7 +111,7 @@ Le projet répond aux objectifs suivants :
 
 ---
 
-# 🏗️ Architecture du projet
+# Architecture du projet
 
 Le pipeline complet est présenté ci-dessous.
 
@@ -123,7 +154,7 @@ Le fonctionnement global est le suivant :
 5. les données de production sont comparées aux données de référence afin de détecter une éventuelle dérive ;
 6. des métriques de monitoring sont calculées automatiquement afin de suivre le comportement du modèle en production.
 
-# 📁 Structure du dépôt
+# Structure du dépôt
 
 Le projet est organisé de manière à séparer les différentes briques fonctionnelles : entraînement du modèle, API, monitoring, scripts utilitaires et tests.
 
@@ -184,7 +215,7 @@ OCR_Projet_8
 
 ## Description des principaux dossiers
 
-### 📦 `artifacts/`
+### `artifacts/`
 
 Contient l'ensemble des artefacts produits lors de l'entraînement du modèle :
 
@@ -198,7 +229,7 @@ Ces fichiers sont chargés automatiquement par l'API au démarrage.
 
 ---
 
-### 📊 `data/`
+### `data/`
 
 Contient les données utilisées par le projet.
 
@@ -206,7 +237,7 @@ Dans la version finale, seules les données nécessaires au monitoring (jeu de r
 
 ---
 
-### 🌐 `src/api/`
+### `src/api/`
 
 Contient toute la logique de l'API FastAPI :
 
@@ -219,7 +250,7 @@ Contient toute la logique de l'API FastAPI :
 
 ---
 
-### 📈 `src/monitoring/`
+### `src/monitoring/`
 
 Contient les différents scripts de monitoring :
 
@@ -231,7 +262,7 @@ Le monitoring est totalement indépendant de l'API et peut être exécuté à to
 
 ---
 
-### ⚙️ `scripts/`
+### `scripts/`
 
 Scripts permettant de générer des jeux de données de test.
 
@@ -244,7 +275,7 @@ Ces scripts permettent de reproduire facilement les expériences présentées da
 
 ---
 
-### 📄 `reports/`
+### `reports/`
 
 Contient les résultats du monitoring.
 
@@ -257,7 +288,7 @@ Cette séparation facilite l'automatisation et l'intégration dans un pipeline d
 
 ---
 
-### ✅ `tests/`
+### `tests/`
 
 Contient les tests unitaires du projet.
 
@@ -265,7 +296,7 @@ Les tests sont exécutés automatiquement par GitHub Actions à chaque push sur 
 
 ---
 
-### 🐳 Dockerfile
+### Dockerfile
 
 Permet de construire une image Docker contenant l'ensemble de l'application.
 
@@ -273,7 +304,7 @@ Cette image est utilisée pour le déploiement sur Render.
 
 ---
 
-### ⚙️ GitHub Actions
+### GitHub Actions
 
 Le workflow CI vérifie automatiquement :
 
@@ -281,7 +312,7 @@ Le workflow CI vérifie automatiquement :
 - l'exécution des tests ;
 - la validité du projet avant déploiement.
 
-# 🚀 Installation
+# Installation
 
 ## Prérequis
 
@@ -400,7 +431,7 @@ A[Clone Git]
 
 ---
 
-# ▶️ Lancement du projet
+# Lancement du projet
 
 ## Lancement local de l'API
 
@@ -495,3 +526,247 @@ source .venv-monitoring/Scripts/activate
 
 pip install -r requirements.txt
 ```
+
+# Déploiement Render
+
+L'API est déployée sur **Render** à l'aide du Dockerfile présent à la racine du projet.
+
+Le déploiement est automatiquement déclenché après validation de la pipeline CI GitHub Actions.
+
+## Configuration
+
+Créer un nouveau **Web Service** sur Render :
+
+- Environment : Docker
+- Branch : `main`
+- Root Directory : `/`
+- Dockerfile Path : `Dockerfile`
+
+Variables d'environnement :
+
+| Variable | Description |
+|----------|-------------|
+| `DATABASE_URL` | Chaîne de connexion PostgreSQL |
+
+---
+
+## Vérification du déploiement
+
+Une fois le service lancé, plusieurs endpoints permettent de vérifier son bon fonctionnement.
+
+### Vérification de l'API
+
+```text
+GET /health
+```
+
+Réponse attendue :
+
+```json
+{
+    "status": "healthy"
+}
+```
+
+---
+
+### Informations sur le modèle
+
+```text
+GET /model_info
+```
+
+Cet endpoint retourne notamment :
+
+- nom du modèle ;
+- seuil de décision ;
+- version ;
+- caractéristiques principales.
+
+---
+
+### Prédiction
+
+```text
+POST /predict
+```
+
+Chaque appel :
+
+- réalise une prédiction ;
+- retourne le score de défaut ;
+- enregistre automatiquement la prédiction dans PostgreSQL.
+
+# Base PostgreSQL
+
+Toutes les prédictions réalisées par l'API sont enregistrées dans PostgreSQL afin de permettre leur analyse a posteriori.
+
+Cette approche constitue la base du monitoring en production.
+
+```mermaid
+flowchart LR
+
+A[API FastAPI]
+
+--> B[Prediction Logger]
+
+--> C[(PostgreSQL)]
+
+C --> D[Monitoring]
+```
+
+---
+
+## Table `prediction_logs`
+
+Chaque prédiction enregistrée contient notamment :
+
+| Champ | Description |
+|--------|-------------|
+| id | Identifiant |
+| timestamp | Date de la prédiction |
+| features | Variables d'entrée |
+| default_probability | Probabilité de défaut |
+| prediction | Classe prédite |
+| decision_threshold | Seuil utilisé |
+| decision_label | Décision finale |
+| latency_ms | Temps de réponse |
+
+Cette table est utilisée comme source unique pour l'ensemble des scripts de monitoring.
+
+# Monitoring
+
+Le monitoring est indépendant de l'API.
+
+Il repose sur deux briques complémentaires :
+
+- le **Data Drift**, permettant de comparer les données de production aux données d'entraînement ;
+- les **Prediction Metrics**, permettant de suivre le comportement du modèle.
+
+---
+
+## Data Drift
+
+Le Data Drift est calculé grâce à **Evidently**.
+
+Les données de production sont comparées au jeu de référence exporté lors de l'entraînement.
+
+Deux scénarios sont disponibles.
+
+### Jeu nominal
+
+```bash
+python -m src.monitoring.drift_monitor \
+    --min-id 0 \
+    --max-id 501 \
+    --output drift_report_nominal.html
+```
+
+---
+
+### Jeu avec dérive simulée
+
+```bash
+python -m src.monitoring.drift_monitor \
+    --min-id 1000 \
+    --max-id 1501 \
+    --output drift_report_simulated.html
+```
+
+Les rapports HTML sont générés dans :
+
+```text
+reports/
+```
+
+---
+
+## Monitoring des prédictions
+
+Les métriques sont calculées directement à partir de PostgreSQL.
+
+### Jeu nominal
+
+```bash
+python -m src.monitoring.prediction_metrics \
+    --min-id 0 \
+    --max-id 501 \
+    --output prediction_metrics_nominal.json
+```
+
+---
+
+### Jeu avec dérive simulée
+
+```bash
+python -m src.monitoring.prediction_metrics \
+    --min-id 1000 \
+    --max-id 1501 \
+    --output prediction_metrics_simulated.json
+```
+
+Les exports JSON sont générés dans :
+
+```text
+reports/metrics/
+```
+
+Les métriques calculées comprennent notamment :
+
+- nombre total de prédictions ;
+- taux de risque de défaut ;
+- probabilité moyenne de défaut ;
+- probabilité médiane ;
+- latence moyenne ;
+- latence P95 ;
+- latence maximale.
+
+# Résultats
+
+Deux scénarios ont été réalisés afin de valider le fonctionnement du monitoring.
+
+## Comparaison
+
+| Scénario | Data Drift | Features en drift | Taux de défaut prédit |
+|-----------|-----------:|------------------:|----------------------:|
+| Nominal | ❌ Non détecté | 16,25 % | 26,95 % |
+| Drift simulé | ✅ Détecté | 58,47 % | 15,57 % |
+
+---
+
+## Analyse
+
+Le premier scénario reproduit une situation proche des données d'entraînement.
+
+Le monitoring détecte uniquement **16,25 %** de variables en dérive, ce qui reste inférieur au seuil configuré par Evidently.
+
+Le second scénario modifie volontairement une partie importante des variables.
+
+Cette modification entraîne :
+
+- une dérive détectée sur **58,47 %** des variables ;
+- une évolution significative des prédictions du modèle ;
+- la génération automatique d'un rapport HTML de Data Drift.
+
+Ces deux expériences montrent que le pipeline de monitoring est capable :
+
+- d'identifier une dérive des données d'entrée ;
+- de mesurer son impact sur les prédictions ;
+- de produire automatiquement des rapports exploitables.
+
+---
+
+# Améliorations possibles
+
+...
+
+---
+
+# Auteur
+
+Clément Mouton
+
+Projet réalisé dans le cadre de la formation Data Scientist OpenClassrooms.
+
+GitHub : https://github.com/ClementMouton/
+LinkedIn : https://www.linkedin.com/in/clement-mouton/
