@@ -94,15 +94,24 @@ def load_production_data(
     else:
         print("ID maximum : aucun")
 
-    with psycopg.connect(
-        database_url
-    ) as connection:
+    with psycopg.connect(database_url) as connection:
+        with connection.cursor() as cursor:
+            cursor.execute(
+                query,
+                tuple(params),
+            )
 
-        dataframe = pd.read_sql(
-            query,
-            connection,
-            params=tuple(params),
-        )
+            rows = cursor.fetchall()
+
+            columns = [
+                description.name
+                for description in cursor.description
+            ]
+
+    dataframe = pd.DataFrame(
+        rows,
+        columns=columns,
+    )
 
     if dataframe.empty:
         print(

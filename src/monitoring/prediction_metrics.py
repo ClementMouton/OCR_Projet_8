@@ -122,11 +122,23 @@ def load_prediction_logs(
         print("ID maximum : aucun")
 
     with psycopg.connect(database_url) as connection:
-        dataframe = pd.read_sql(
-            query,
-            connection,
-            params=tuple(params),
-        )
+        with connection.cursor() as cursor:
+            cursor.execute(
+                query,
+                tuple(params),
+            )
+
+            rows = cursor.fetchall()
+
+            columns = [
+                description.name
+                for description in cursor.description
+            ]
+
+    dataframe = pd.DataFrame(
+        rows,
+        columns=columns,
+    )
 
     if dataframe.empty:
         raise ValueError(
