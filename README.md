@@ -35,19 +35,20 @@ uvicorn src.api.app:app --reload
 
 # Sommaire
 
-- [Présentation](#-présentation)
-- [Architecture du projet](#-architecture-du-projet)
-- [Structure du dépôt](#-structure-du-dépôt)
-- [Installation](#-installation)
-- [Lancement du projet](#-lancement-du-projet)
-- [Déploiement Render](#-déploiement-render)
-- [Base PostgreSQL](#-base-postgresql)
-- [Monitoring](#-monitoring)
-- [Reproduire les expériences](#-reproduire-les-expériences)
-- [Résultats](#-résultats)
-- [Améliorations possibles](#-améliorations-possibles)
+- [Présentation](#presentation)
+- [Architecture du projet](#architecture)
+- [Structure du dépôt](#structure)
+- [Installation](#installation)
+- [Lancement du projet](#lancement)
+- [Déploiement Render](#render)
+- [Base PostgreSQL](#postgresql)
+- [Monitoring](#monitoring)
+- [Reproduire les expériences](#experiences)
+- [Résultats](#resultats)
+- [Améliorations possibles](#ameliorations)
 
 ---
+<a id="presentation"></a>
 
 # Présentation
 
@@ -110,6 +111,7 @@ Le projet répond aux objectifs suivants :
 | CI/CD | GitHub Actions |
 
 ---
+<a id="architecture"></a>
 
 # Architecture du projet
 
@@ -153,6 +155,8 @@ Le fonctionnement global est le suivant :
 4. chaque prédiction est enregistrée dans PostgreSQL ;
 5. les données de production sont comparées aux données de référence afin de détecter une éventuelle dérive ;
 6. des métriques de monitoring sont calculées automatiquement afin de suivre le comportement du modèle en production.
+
+<a id="structure"></a>
 
 # Structure du dépôt
 
@@ -312,6 +316,8 @@ Le workflow CI vérifie automatiquement :
 - l'exécution des tests ;
 - la validité du projet avant déploiement.
 
+<a id="installation"></a>
+
 # Installation
 
 ## Prérequis
@@ -431,6 +437,8 @@ A[Clone Git]
 
 ---
 
+<a id="lancement"></a>
+
 # Lancement du projet
 
 ## Lancement local de l'API
@@ -527,6 +535,8 @@ source .venv-monitoring/Scripts/activate
 pip install -r requirements.txt
 ```
 
+<a id="render"></a>
+
 # Déploiement Render
 
 L'API est déployée sur **Render** à l'aide du Dockerfile présent à la racine du projet.
@@ -597,6 +607,8 @@ Chaque appel :
 - retourne le score de défaut ;
 - enregistre automatiquement la prédiction dans PostgreSQL.
 
+<a id="postgresql"></a>
+
 # Base PostgreSQL
 
 Toutes les prédictions réalisées par l'API sont enregistrées dans PostgreSQL afin de permettre leur analyse a posteriori.
@@ -633,6 +645,8 @@ Chaque prédiction enregistrée contient notamment :
 | latency_ms | Temps de réponse |
 
 Cette table est utilisée comme source unique pour l'ensemble des scripts de monitoring.
+
+<a id="monitoring"></a>
 
 # Monitoring
 
@@ -721,6 +735,8 @@ Les métriques calculées comprennent notamment :
 - latence P95 ;
 - latence maximale.
 
+<a id="resultats"></a>
+
 # Résultats
 
 Deux scénarios ont été réalisés afin de valider le fonctionnement du monitoring.
@@ -755,6 +771,8 @@ Ces deux expériences montrent que le pipeline de monitoring est capable :
 - de produire automatiquement des rapports exploitables.
 
 ---
+
+<a id="ameliorations"></a>
 
 # Améliorations possibles
 
