@@ -1,7 +1,7 @@
 <div align="center">
 
 # Home Credit Default Risk
-# Production API, Monitoring & MLOps
+## Production API, Monitoring & MLOps
 
 **Déployez et monitorez un modèle de scoring crédit**
 
@@ -20,7 +20,7 @@ Projet réalisé dans le cadre de la formation **Data Scientist – OpenClassroo
 ## Quick Start
 
 ```bash
-git clone ...
+git clone https://github.com/ClementMouton/OCR_Projet_8.git
 
 cd OCR_Projet_8
 
@@ -81,6 +81,20 @@ Contrairement à un projet de Machine Learning classique, ce projet couvre égal
 - Génération de rapports HTML
 - Exports JSON
 - Intégration Continue GitHub Actions
+
+flowchart LR
+
+A[Génération des données]
+
+--> B[API]
+
+--> C[PostgreSQL]
+
+--> D[Drift Monitor]
+
+--> E[Prediction Metrics]
+
+--> F[Résultats]
 
 ---
 
@@ -734,6 +748,141 @@ Les métriques calculées comprennent notamment :
 - latence moyenne ;
 - latence P95 ;
 - latence maximale.
+
+---
+
+<a id="experiences"></a>
+
+# Reproduire les expériences
+
+Cette section décrit les étapes permettant de reproduire les expériences réalisées dans le cadre du projet et de vérifier le bon fonctionnement du pipeline de monitoring.
+
+L'objectif est de comparer deux situations :
+
+- **Scénario nominal** : les données de production sont proches des données d'entraînement ;
+- **Scénario avec dérive simulée** : une partie des variables est volontairement modifiée afin de provoquer un Data Drift.
+
+---
+
+## Étape 1 – Démarrer l'API
+
+Lancer l'API localement (ou utiliser l'instance Render) :
+
+```bash
+uvicorn src.api.app:app --reload
+```
+
+Toutes les prédictions effectuées seront automatiquement enregistrées dans PostgreSQL.
+
+---
+
+## Étape 2 – Générer des prédictions nominales
+
+Le premier script génère un ensemble de prédictions représentatif d'un fonctionnement normal.
+
+```bash
+python scripts/generate_nominal_data.py
+```
+
+À l'issue de cette étape :
+
+- plusieurs centaines de prédictions sont enregistrées dans PostgreSQL ;
+- ces données serviront de référence pour le premier rapport de monitoring.
+
+---
+
+## Étape 3 – Générer des prédictions avec dérive
+
+Le second script applique volontairement des modifications sur de nombreuses variables afin de simuler une évolution des données de production.
+
+```bash
+python scripts/generate_drift_data.py
+```
+
+Les nouvelles prédictions sont ajoutées dans PostgreSQL et constituent un second jeu de données présentant une dérive significative.
+
+---
+
+## Étape 4 – Générer les rapports de Data Drift
+
+### Rapport nominal
+
+```bash
+python -m src.monitoring.drift_monitor \
+    --min-id 0 \
+    --max-id 501 \
+    --output drift_report_nominal.html
+```
+
+### Rapport avec dérive simulée
+
+```bash
+python -m src.monitoring.drift_monitor \
+    --min-id 1000 \
+    --max-id 1501 \
+    --output drift_report_simulated.html
+```
+
+Les rapports HTML sont générés dans :
+
+```text
+reports/
+```
+
+Ils permettent de visualiser les variables présentant une dérive statistiquement significative.
+
+---
+
+## Étape 5 – Générer les métriques de monitoring
+
+### Jeu nominal
+
+```bash
+python -m src.monitoring.prediction_metrics \
+    --min-id 0 \
+    --max-id 501 \
+    --output prediction_metrics_nominal.json
+```
+
+### Jeu avec dérive simulée
+
+```bash
+python -m src.monitoring.prediction_metrics \
+    --min-id 1000 \
+    --max-id 1501 \
+    --output prediction_metrics_simulated.json
+```
+
+Les métriques sont exportées dans :
+
+```text
+reports/metrics/
+```
+
+---
+
+## Étape 6 – Comparer les résultats
+
+À la fin de l'expérience, le dossier `reports/` contient :
+
+```text
+reports/
+├── drift_report_nominal.html
+├── drift_report_simulated.html
+└── metrics/
+    ├── prediction_metrics_nominal.json
+    └── prediction_metrics_simulated.json
+```
+
+Ces fichiers permettent de comparer :
+
+- la dérive des données d'entrée ;
+- l'évolution des prédictions du modèle ;
+- les principales métriques de monitoring (taux de défaut, probabilités, latence).
+
+Cette démarche reproduit un scénario classique de supervision d'un modèle de Machine Learning en production, où les données observées sont comparées aux données d'entraînement afin de détecter une éventuelle dégradation du comportement du modèle.
+
+---
 
 <a id="resultats"></a>
 
