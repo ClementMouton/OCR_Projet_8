@@ -82,6 +82,7 @@ Contrairement à un projet de Machine Learning classique, ce projet couvre égal
 - Exports JSON
 - Intégration Continue GitHub Actions
 
+```mermaid
 flowchart LR
 
 A[Génération des données]
@@ -95,6 +96,7 @@ A[Génération des données]
 --> E[Prediction Metrics]
 
 --> F[Résultats]
+```
 
 ---
 
