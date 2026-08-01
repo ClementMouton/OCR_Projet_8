@@ -7,6 +7,8 @@
 
 Projet réalisé dans le cadre de la formation **Data Scientist – OpenClassrooms**.
 
+Ce dépôt illustre le déploiement et le monitoring d'un modèle de scoring crédit en appliquant les principaux concepts MLOps : API, Docker, intégration continue, journalisation PostgreSQL et surveillance du modèle en production.
+
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green)
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED)
@@ -25,6 +27,8 @@ git clone https://github.com/ClementMouton/OCR_Projet_8.git
 cd OCR_Projet_8
 
 python -m venv .venv
+
+source .venv/Scripts/activate
 
 pip install -r requirements.txt
 
@@ -757,7 +761,7 @@ Les métriques calculées comprennent notamment :
 
 # Reproduire les expériences
 
-Cette section décrit les étapes permettant de reproduire les expériences réalisées dans le cadre du projet et de vérifier le bon fonctionnement du pipeline de monitoring.
+Cette section présente le protocole expérimental utilisé pour valider le pipeline de monitoring développé dans ce projet.
 
 L'objectif est de comparer deux situations :
 
@@ -894,6 +898,8 @@ Deux scénarios ont été réalisés afin de valider le fonctionnement du monito
 
 ## Comparaison
 
+Les expériences suivantes ont été réalisées afin de vérifier la capacité du système de monitoring à détecter une dérive des données de production.
+
 | Scénario | Data Drift | Features en drift | Taux de défaut prédit |
 |-----------|-----------:|------------------:|----------------------:|
 | Nominal | ❌ Non détecté | 16,25 % | 26,95 % |
@@ -927,7 +933,13 @@ Ces deux expériences montrent que le pipeline de monitoring est capable :
 
 # Améliorations possibles
 
-...
+- Automatisation de la génération des rapports de monitoring.
+- Mise en place d'un système d'alertes en cas de dérive détectée.
+- Création d'un tableau de bord Grafana ou Streamlit.
+- Réentraînement automatique du modèle après validation.
+- Versionnement avancé des modèles avec MLflow ou DVC.
+- Authentification de l'API.
+- Suivi des performances du modèle lorsque les labels réels deviennent disponibles.
 
 ---
 
@@ -937,5 +949,5 @@ Clément Mouton
 
 Projet réalisé dans le cadre de la formation Data Scientist OpenClassrooms.
 
-GitHub : https://github.com/ClementMouton/
-LinkedIn : https://www.linkedin.com/in/clement-mouton/
+- **GitHub** : https://github.com/ClementMouton/
+- **LinkedIn** : https://www.linkedin.com/in/clement-mouton/
