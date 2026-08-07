@@ -1,0 +1,27 @@
+{
+    "generated_at": "2026-08-07T09:18:18",
+    "production_period": {
+        "first_prediction": "2026-07-30T10:29:06.571061+00:00",
+        "last_prediction": "2026-07-31T12:00:11.558690+00:00"
+    },
+    "predictions": {
+        "total_predictions": 1501,
+        "credit_accordable_count": 1210,
+        "credit_refused_count": 291,
+        "acceptance_rate": 0.8061,
+        "refusal_rate": 0.1939
+    },
+    "default_probability": {
+        "mean": 0.3041,
+        "median": 0.2421,
+        "std": 0.2262,
+        "min": 0.0113,
+        "max": 0.9816
+    },
+    "latency_ms": {
+        "mean": 33.75,
+        "median": 14.38,
+        "p95": 94.81,
+        "max": 669.44
+    }
+}
